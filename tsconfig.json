@@ -1,0 +1,28 @@
+{
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "bundler",
+    "module": "esnext",
+  },
+  "exclude": [
+    "node_modules", // 기본적으로 제외될 가능성이 높음
+    ".svelte-kit", // .svelte-kit/tsconfig.json을 extends 하므로, .svelte-kit 내부의 특정 생성물 폴더를 지정하는 것이 더 나을 수 있습니다. 예: .svelte-kit/output, .svelte-kit/generated
+    // "static/large-assets", // 예시: static 폴더 내부에 JS/Svelte 파일이 아닌 대용량 에셋이 많은 경우
+    // 프로젝트에 따라 추가적인 폴더 지정
+    "dist",
+    "build"
+  ]
+  // Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
+  // except $lib which is handled by https://kit.svelte.dev/docs/configuration#files
+  //
+  // If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+  // from the referenced tsconfig.json - TypeScript does not merge them in
+}
